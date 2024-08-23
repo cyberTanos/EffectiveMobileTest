@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="plurals_vacancies">
+        <item quantity="one">%1$d человек</item>
+        <item quantity="two">%1$d человека</item>
+        <item quantity="few">%1$d человека</item>
+        <item quantity="other">%1$d человек</item>
+    </plurals>
+
+    <plurals name="plurals_vacancies_full">
+        <item quantity="one">%1$d вакансия</item>
+        <item quantity="two">%1$d вакансии</item>
+        <item quantity="few">%1$d вакансии</item>
+        <item quantity="other">%1$d вакансий</item>
+    </plurals>
+
+    <plurals name="plurals_button">
+        <item quantity="one">%1$d вакансия</item>
+        <item quantity="two">%1$d вакансии</item>
+        <item quantity="few">%1$d вакансии</item>
+        <item quantity="other">%1$d вакансий</item>
+    </plurals>
+</resources>

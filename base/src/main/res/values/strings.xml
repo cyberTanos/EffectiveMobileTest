@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EffectiveMobileTest</string>
+    <string name="search">Поиск</string>
+    <string name="favourite">Избранное</string>
+    <string name="response">Отклики</string>
+    <string name="message">Сообщения</string>
+    <string name="profile">Профиль</string>
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inpSerch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_edit"
+        app:boxStrokeColor="@android:color/transparent"
+        app:cursorColor="@color/gray"
+        app:endIconDrawable="@drawable/ic_close"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:hintTextColor="@color/gray"
+        app:layout_constraintEnd_toStartOf="@id/filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderTextColor="@android:color/transparent"
+        app:startIconDrawable="@drawable/ic_search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:enabled="false"
+            android:hint="Должность, ключевые слова"
+            android:textColorHint="@color/gray"
+            android:textSize="14dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_filter"
+        android:padding="11dp"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintBottom_toBottomOf="@id/inpSerch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inpSerch" />
+
+    <TextView
+        android:id="@+id/textVacancies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="145 вакансий"
+        android:textColor="@color/white"
+        android:textFontWeight="400"
+        android:textSize="14dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/inpSerch"
+        app:layout_constraintTop_toBottomOf="@id/inpSerch"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textVacanciesFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="6dp"
+        android:text="По соответствию"
+        android:textColor="@color/blue"
+        android:textFontWeight="400"
+        android:textSize="14dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/textVacanciesFilter"
+        app:layout_constraintTop_toBottomOf="@id/inpSerch"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imgVacanciesFilter"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_vacancies_filter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/textVacanciesFilter"
+        app:layout_constraintEnd_toEndOf="@+id/filter"
+        app:layout_constraintStart_toEndOf="@id/textVacanciesFilter"
+        app:layout_constraintTop_toTopOf="@id/textVacanciesFilter"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recomendations"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textVacancies"
+        tools:listitem="@layout/item_search_recomend" />
+
+    <TextView
+        android:id="@+id/textForYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Вакансии для вас"
+        android:textColor="@color/white"
+        android:textFontWeight="600"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recomendations" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/works"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textForYou"
+        tools:listitem="@layout/item_search_work" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
