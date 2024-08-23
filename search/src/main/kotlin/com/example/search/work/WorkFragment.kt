@@ -82,10 +82,11 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
         fav = args.isFavorite
 
         binding.imgFavourite.setOnClickListener {
-            if (fav) binding.imgFavourite.setImageDrawable(
-                AppCompatResources.getDrawable(requireContext(), com.example.base.R.drawable.ic_favourite)
-            ) else AppCompatResources.getDrawable(requireContext(), com.example.base.R.drawable.ic_favourite_fill)
             fav = !fav
+            binding.imgFavourite.setImageDrawable(
+                if (fav) AppCompatResources.getDrawable(requireContext(), com.example.base.R.drawable.ic_favourite_fill)
+                else AppCompatResources.getDrawable(requireContext(), com.example.base.R.drawable.ic_favourite)
+            )
             vm.addFavorite(args.id)
         }
     }
